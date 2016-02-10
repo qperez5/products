@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Report</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example{
+            margin: 10px;
+        }
+        tfoot {
+            color: white;
+            background-color: grey;
+        }
+        thead {
+            color: white;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+<div class="">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th class="text-center" colspan="14">2012</th>
+        </tr>
+        <tr>
+            <th>Product</th>
+            <th>January</th>
+            <th>February</th>
+            <th>March</th>
+            <th>April</th>
+            <th>May</th>
+            <th>June</th>
+            <th>July</th>
+            <th>August</th>
+            <th>September</th>
+            <th>October</th>
+            <th>November</th>
+            <th>December</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($rows as $row) : ?>
+        <tr>
+            <td><?php echo $row->productName;?></td>
+            <td><?php echo number_format($row->jan,2);?></td>
+            <td><?php echo number_format($row->feb,2);?></td>
+            <td><?php echo number_format($row->mar,2);?></td>
+            <td><?php echo number_format($row->apr,2);?></td>
+            <td><?php echo number_format($row->may,2);?></td>
+            <td><?php echo number_format($row->jun,2);?></td>
+            <td><?php echo number_format($row->jul,2);?></td>
+            <td><?php echo number_format($row->aug,2);?></td>
+            <td><?php echo number_format($row->sep,2);?></td>
+            <td><?php echo number_format($row->oct,2);?></td>
+            <td><?php echo number_format($row->nov,2);?></td>
+            <td><?php echo number_format($row->decem,2);?></td>
+            <td><?php echo number_format($row->getRowTotal(),2);?></td>
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td><?php echo number_format($totalJan,2);?></td>
+                <td><?php echo number_format($totalFeb,2);?></td>
+                <td><?php echo number_format($totalMar,2);?></td>
+                <td><?php echo number_format($totalApr,2);?></td>
+                <td><?php echo number_format($totalMay,2);?></td>
+                <td><?php echo number_format($totalJun,2);?></td>
+                <td><?php echo number_format($totalJul,2);?></td>
+                <td><?php echo number_format($totalAug,2);?></td>
+                <td><?php echo number_format($totalSep,2);?></td>
+                <td><?php echo number_format($totalOct,2);?></td>
+                <td><?php echo number_format($totalNov,2);?></td>
+                <td><?php echo number_format($totalDecem,2);?></td>
+                <td><?php echo number_format($total,2);?></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>
